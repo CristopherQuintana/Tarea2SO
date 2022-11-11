@@ -36,7 +36,7 @@ int main(int argc, char *argv[]){
 			l_ips[i] = "ping -q -c" + arg + " " + l_ips[i] + " > info.txt"; //texto a ejecutar en consola
 			system(l_ips[i].c_str());	// ejecución en consola
 			myMutex.lock();			// necesitamos usar mutex debido a conflictos con el array
-			ips.open("info.txt");	// abrimos cada uno de los textos
+			ips.open("info.txt");	// abrimos el texto
 			while(!ips.eof()){
 				getline(ips, linea);
 				if(linea.length()){
